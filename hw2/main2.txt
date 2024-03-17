@@ -1,0 +1,19 @@
+01 #include <stdio.h>
+02 
+03 int main(){
+04     char filename[]="main2.c";
+05     FILE*fp = fopen("main.c","r+");
+06     FILE*fpw = fopen("main2.txt","w+");
+07     int c,line=1;
+08     
+09     
+10     fprintf(fpw,"01 ");
+11     while((c=getc(fp))!=EOF){
+12         c == '\n' ? fprintf(fpw,"\n%02d ", ++line) : fprintf(fpw,"%c",c);
+13         
+14     }
+15     fclose(fp);
+16     fclose(fpw);
+17     
+18     return 0;
+19 }
